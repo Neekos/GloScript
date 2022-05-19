@@ -1,7 +1,24 @@
+import getData from "./getData"
+import postData from "./postData"
+
 const second = () => {
+    const cartbtn = document.getElementById('cart')
+    console.log("hi2!")
 
-    console.log("hi!")
 
+    // cartbtn.addEventListener('click', () => {
+    //     postData().then((data) => {
+    //         console.log(data) // вывод данных из сервера
+
+    //         getData().then((data) => {
+    //             console.log(data) // вывод данных из сервера
+    //         })
+    //     })
+    // })
+
+    getData().then((data) => {
+        console.log(data) // вывод данных из сервера
+    })
 }
 
 export default second
