@@ -16,8 +16,18 @@ const second = () => {
     //     })
     // })
 
-    getData().then((data) => {
-        console.log(data) // вывод данных из сервера
+    // getData().then((data) => {
+    //     console.log(data) // вывод данных из сервера
+    // })
+
+    cartbtn.addEventListener('click', () => {
+        postData().then((data) => {
+            console.log(data) // вывод данных из сервера
+
+            getData().then((data) => {
+                console.log(data) // вывод данных из сервера
+            })
+        })
     })
 }
 

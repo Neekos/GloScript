@@ -2,7 +2,7 @@
 // get получает объект
 // post отправляет 
 const postData = () => {
-    return fetch('https://gloproj-ca645-default-rtdb.firebaseio.com/goods.json', {
+    return fetch('http://localhost:3000/goods', {
         method: 'POST',
         body: JSON.stringify({
             title: "Лимбо",
