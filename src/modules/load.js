@@ -4,7 +4,6 @@ import renderGoods from "./renderGoods"
 
 const load = () => {
     const cartbtn = document.getElementById('cart')
-
     // cartbtn.addEventListener('click', () => {
     //     postData().then((data) => {
     //         console.log(data) // вывод данных из сервера
