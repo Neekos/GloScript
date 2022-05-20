@@ -9,11 +9,34 @@ export const categoryFilter = (goods, value) => {
         return goodsItem.category === value
     })
 }
-
-export const priceFilter = (goods, valueMin, valueMax, valueCheck) => {
+// мой скрипт
+// export const priceFilter = (goods, valueMin, valueMax, valueCheck) => {
+//     return goods.filter((goodsItem) => {
+//         return ((goodsItem.price >= valueMin) && (goodsItem.price <= valueMax)) && (((goodsItem.price >= valueMin) && (goodsItem.price <= valueMax)) && goodsItem.sale === valueCheck)
+//     })
+// }
+export const priceFilter = (goods, min, max) => {
     return goods.filter((goodsItem) => {
-        return ((goodsItem.price >= valueMin) && (goodsItem.price <= valueMax)) && (((goodsItem.price >= valueMin) && (goodsItem.price <= valueMax)) && goodsItem.sale === valueCheck)
+        if (min === '' && max === '') {
+            return goodsItem
+        } else if (min !== '' && max !== '') {
+            return goodsItem.price > +min && goodsItem.price < +max
+        } else if (min !== '' && max === '') {
+            return goodsItem.price > +min
+        } else if (min === '' && max !== '') {
+            return goodsItem.price < +max
+        }
     })
 }
 
-// export default searchFilter
+export const saleFilter = (goods, value) => {
+    return goods.filter((goodsItem) => {
+        if (value) {
+            return goodsItem.sale === true
+        } else {
+            return goodsItem
+        }
+    })
+}
+// мой скрипт
+

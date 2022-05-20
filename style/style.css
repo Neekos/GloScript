@@ -462,7 +462,7 @@ nav .search-btn button::before {
 }
 
 .filter-check_checkbox {
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   cursor: pointer;
 }
