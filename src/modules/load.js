@@ -1,10 +1,9 @@
 import getData from "./getData"
 import postData from "./postData"
+import renderGoods from "./renderGoods"
 
-const second = () => {
+const load = () => {
     const cartbtn = document.getElementById('cart')
-    console.log("hi2!")
-
 
     // cartbtn.addEventListener('click', () => {
     //     postData().then((data) => {
@@ -23,12 +22,12 @@ const second = () => {
     cartbtn.addEventListener('click', () => {
         postData().then((data) => {
             console.log(data) // вывод данных из сервера
-
-            getData().then((data) => {
-                console.log(data) // вывод данных из сервера
-            })
         })
+    })
+
+    getData().then((data) => {
+        renderGoods(data) // вывод данных из сервера
     })
 }
 
-export default second
+export default load
